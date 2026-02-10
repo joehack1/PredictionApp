@@ -14,15 +14,11 @@ class Settings(BaseSettings):
     server_host: str = "0.0.0.0"
     server_port: int = 8000
     
-    # Database Configuration
-    database_url: str = "postgresql://user:password@localhost:5432/prediction_db"
+    # Database Configuration (SQLite by default for local development)
+    database_url: str = "sqlite:///./prediction.db"
     database_echo: bool = True
     database_pool_size: int = 10
     database_max_overflow: int = 20
-    
-    # Redis Configuration
-    redis_url: str = "redis://localhost:6379"
-    redis_cache_ttl: int = 3600
     
     # External APIs
     football_data_api_key: str = ""
