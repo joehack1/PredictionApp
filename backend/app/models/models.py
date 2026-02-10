@@ -10,7 +10,7 @@ class Team(Base):
     __tablename__ = "teams"
     
     id = Column(Integer, primary_key=True, index=True)
-    external_id = Column(Integer, unique=True, null=True)  # From football-data.org
+    external_id = Column(Integer, unique=True, nullable=True)  # From football-data.org
     name = Column(String(100), unique=True, index=True)
     short_code = Column(String(10), unique=True)
     crest_url = Column(String(500), nullable=True)
@@ -44,7 +44,7 @@ class Match(Base):
     __tablename__ = "matches"
     
     id = Column(Integer, primary_key=True, index=True)
-    external_id = Column(Integer, unique=True, null=True)  # From football-data.org
+    external_id = Column(Integer, unique=True, nullable=True)  # From football-data.org
     
     # Team information
     home_team_id = Column(Integer, ForeignKey("teams.id"), index=True)
